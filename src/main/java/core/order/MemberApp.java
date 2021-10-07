@@ -1,13 +1,14 @@
 package core.order;
 
-import core.order.member.*;
+import core.order.member.Grade;
+import core.order.member.Member;
 import core.order.member.MemberService;
-import core.order.member.MemberServiceImpl;
 
 
 public class MemberApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
 
