@@ -1,7 +1,7 @@
 package core.order;
 
 import core.order.discount.DiscountPolicy;
-import core.order.discount.FixDiscountPolicy;
+import core.order.discount.RateDiscountPolicy;
 import core.order.member.MemberRepository;
 import core.order.member.MemberService;
 import core.order.member.MemberServiceImpl;
@@ -24,7 +24,7 @@ public class AppConfig {
     }
 
     private DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 
 
